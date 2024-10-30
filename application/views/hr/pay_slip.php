@@ -120,7 +120,7 @@
       <ol class="breadcrumb">
          <li><a href="#"><i class="pe-7s-home"></i> <?php echo display('home') ?></a></li>
          <li><a href="#">Payslip</a></li>
-         <li class="active">Add Employee Payslip</li>
+         <li class="active">Employee Payslip</li>
       </ol>
    </div>
 </section>

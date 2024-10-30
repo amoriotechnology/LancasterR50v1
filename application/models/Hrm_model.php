@@ -323,9 +323,14 @@ public function state_summary_employer($emp_name = null, $tax_choice = null, $se
     $this->db->group_by('a.timesheet_id,d.code, c.id, c.first_name, c.middle_name, c.last_name, d.tax_type,d.weekly,d.biweekly,d.monthly, d.tax,d.amount');
     
     $query = $this->db->get();
-   
+
+    if (!$query) {
+        $error = $this->db->error(); // Array containing code and message
+        log_message('error', 'Database error: ' . print_r($error, true));
+        return false;
+    }
+
     $resultRows = $query->result_array();
-   
     return $resultRows;
 }
 
